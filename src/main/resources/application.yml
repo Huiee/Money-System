@@ -1,0 +1,32 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/reward_system?serverTimezone=UTC&useSSL=false&characterEncoding=utf8
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      #如果表不存在，则按实体类规则创建相应的表，如果存在，则不创建新表
+      ddl-auto: update
+    #显示底层的sql语句
+    show-sql: true
+    #配置freemark
+  freemarker:
+    allow-request-override: false
+    cache: false
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+    template-loader-path: classpath:/templates/
+    suffix: .ftl
+    charset: UTF-8
+    #prefix:
+    #request-context-attribute:
+    #settings:
+    #view-names:
+  resources:
+    static-locations: classpath:/static/
